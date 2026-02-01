@@ -23,6 +23,4 @@ A logical vector
 \description{
 Methods for comparison operators
 }
-\author{
-Charles Determan Jr.
-}
+

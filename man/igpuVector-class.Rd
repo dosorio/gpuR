@@ -4,6 +4,9 @@
 \name{igpuVector-class}
 \alias{igpuVector-class}
 \title{igpuVector Class}
+\value{
+If the gpuVector object is of type 'integer', returns TRUE, if not, returns an error message.
+}
 \description{
 An integer vector in the S4 \code{gpuVector}
 representation.
@@ -15,9 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{gpuVector-class}}
-}
-\author{
-Charles Determan Jr.
-}

@@ -4,6 +4,9 @@
 \name{fvclVector-class}
 \alias{fvclVector-class}
 \title{fvclVector Class}
+\value{
+If the vclVector object is of type 'float', returns TRUE, if not, returns an error message.
+}
 \description{
 An float vector in the S4 \code{vclVector}
 representation.
@@ -15,9 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{vclVector-class}}
-}
-\author{
-Charles Determan Jr.
-}

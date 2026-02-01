@@ -21,6 +21,4 @@ A \code{gpuR} object
 \description{
 Generate a permutation of row or column indices
 }
-\author{
-Charles Determan Jr.
-}
+

@@ -35,13 +35,4 @@ with the following components:
 \description{
 Compute the singular-value decomposition of a gpuR matrix
 }
-\note{
-This an S3 generic of \link[base]{svd}.  The default continues
-to point to the default base function.
-}
-\seealso{
-\link[base]{svd}
-}
-\author{
-Charles Determan Jr.
-}
+

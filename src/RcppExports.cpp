@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // cpp_vclMatrix_custom_chol
 void cpp_vclMatrix_custom_chol(SEXP ptrB, const bool BisVCL, const int upper, SEXP sourceCode, int max_local_size, const int type_flag, const int ctx_id);
 RcppExport SEXP _gpuR_cpp_vclMatrix_custom_chol(SEXP ptrBSEXP, SEXP BisVCLSEXP, SEXP upperSEXP, SEXP sourceCodeSEXP, SEXP max_local_sizeSEXP, SEXP type_flagSEXP, SEXP ctx_idSEXP) {
@@ -23,12 +28,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // initContexts
-void initContexts();
+String initContexts();
 RcppExport SEXP _gpuR_initContexts() {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    initContexts();
-    return R_NilValue;
+    rcpp_result_gen = Rcpp::wrap(initContexts());
+    return rcpp_result_gen;
 END_RCPP
 }
 // listContexts
@@ -711,6 +717,189 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const bool >::type BisI(BisISEXP);
     cpp_gpuMatrix_solve(ptrA, ptrB, AisVCL, BisVCL, type_flag, ctx_id, BisI);
     return R_NilValue;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_double
+SEXP cpp_gpuSparseMatrix_double(SEXP x, int ctx_id, int platform_id, int device_id);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_double(SEXP xSEXP, SEXP ctx_idSEXP, SEXP platform_idSEXP, SEXP device_idSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ctx_id(ctx_idSEXP);
+    Rcpp::traits::input_parameter< int >::type platform_id(platform_idSEXP);
+    Rcpp::traits::input_parameter< int >::type device_id(device_idSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_double(x, ctx_id, platform_id, device_id));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_float
+SEXP cpp_gpuSparseMatrix_float(SEXP x, int ctx_id, int platform_id, int device_id);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_float(SEXP xSEXP, SEXP ctx_idSEXP, SEXP platform_idSEXP, SEXP device_idSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ctx_id(ctx_idSEXP);
+    Rcpp::traits::input_parameter< int >::type platform_id(platform_idSEXP);
+    Rcpp::traits::input_parameter< int >::type device_id(device_idSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_float(x, ctx_id, platform_id, device_id));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_int
+SEXP cpp_gpuSparseMatrix_int(SEXP x, int ctx_id, int platform_id, int device_id);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_int(SEXP xSEXP, SEXP ctx_idSEXP, SEXP platform_idSEXP, SEXP device_idSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ctx_id(ctx_idSEXP);
+    Rcpp::traits::input_parameter< int >::type platform_id(platform_idSEXP);
+    Rcpp::traits::input_parameter< int >::type device_id(device_idSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_int(x, ctx_id, platform_id, device_id));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_fcomplex
+SEXP cpp_gpuSparseMatrix_fcomplex(SEXP x, int ctx_id, int platform_id, int device_id);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_fcomplex(SEXP xSEXP, SEXP ctx_idSEXP, SEXP platform_idSEXP, SEXP device_idSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ctx_id(ctx_idSEXP);
+    Rcpp::traits::input_parameter< int >::type platform_id(platform_idSEXP);
+    Rcpp::traits::input_parameter< int >::type device_id(device_idSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_fcomplex(x, ctx_id, platform_id, device_id));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_dcomplex
+SEXP cpp_gpuSparseMatrix_dcomplex(SEXP x, int ctx_id, int platform_id, int device_id);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_dcomplex(SEXP xSEXP, SEXP ctx_idSEXP, SEXP platform_idSEXP, SEXP device_idSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type ctx_id(ctx_idSEXP);
+    Rcpp::traits::input_parameter< int >::type platform_id(platform_idSEXP);
+    Rcpp::traits::input_parameter< int >::type device_id(device_idSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_dcomplex(x, ctx_id, platform_id, device_id));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_dims
+Rcpp::IntegerVector cpp_gpuSparseMatrix_dims(SEXP x);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_dims(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_dims(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_nrow
+int cpp_gpuSparseMatrix_nrow(SEXP x);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_nrow(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_nrow(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_ncol
+int cpp_gpuSparseMatrix_ncol(SEXP x);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_ncol(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_ncol(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_nnz
+int cpp_gpuSparseMatrix_nnz(SEXP x);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_nnz(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_nnz(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMatrix_to_matrix
+Rcpp::NumericMatrix cpp_gpuSparseMatrix_to_matrix(SEXP x);
+RcppExport SEXP _gpuR_cpp_gpuSparseMatrix_to_matrix(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMatrix_to_matrix(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMat_mult
+SEXP cpp_gpuSparseMat_mult(SEXP ptrA, SEXP ptrB);
+RcppExport SEXP _gpuR_cpp_gpuSparseMat_mult(SEXP ptrASEXP, SEXP ptrBSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ptrA(ptrASEXP);
+    Rcpp::traits::input_parameter< SEXP >::type ptrB(ptrBSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMat_mult(ptrA, ptrB));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseGpuDenseMat_mult
+SEXP cpp_gpuSparseGpuDenseMat_mult(SEXP ptrA, SEXP ptrB);
+RcppExport SEXP _gpuR_cpp_gpuSparseGpuDenseMat_mult(SEXP ptrASEXP, SEXP ptrBSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ptrA(ptrASEXP);
+    Rcpp::traits::input_parameter< SEXP >::type ptrB(ptrBSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseGpuDenseMat_mult(ptrA, ptrB));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuDenseGpuSparseMat_mult
+SEXP cpp_gpuDenseGpuSparseMat_mult(SEXP ptrA, SEXP ptrB);
+RcppExport SEXP _gpuR_cpp_gpuDenseGpuSparseMat_mult(SEXP ptrASEXP, SEXP ptrBSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ptrA(ptrASEXP);
+    Rcpp::traits::input_parameter< SEXP >::type ptrB(ptrBSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuDenseGpuSparseMat_mult(ptrA, ptrB));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMat_transpose
+SEXP cpp_gpuSparseMat_transpose(SEXP ptrA);
+RcppExport SEXP _gpuR_cpp_gpuSparseMat_transpose(SEXP ptrASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ptrA(ptrASEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMat_transpose(ptrA));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_gpuSparseMat_norm_frobenius
+double cpp_gpuSparseMat_norm_frobenius(SEXP ptrA);
+RcppExport SEXP _gpuR_cpp_gpuSparseMat_norm_frobenius(SEXP ptrASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ptrA(ptrASEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_gpuSparseMat_norm_frobenius(ptrA));
+    return rcpp_result_gen;
 END_RCPP
 }
 // synchronize
@@ -2942,6 +3131,21 @@ static const R_CallMethodDef CallEntries[] = {
     {"_gpuR_cpp_vclMatrix_set_row_order", (DL_FUNC) &_gpuR_cpp_vclMatrix_set_row_order, 7},
     {"_gpuR_cpp_gpuMatrix_det", (DL_FUNC) &_gpuR_cpp_gpuMatrix_det, 4},
     {"_gpuR_cpp_gpuMatrix_solve", (DL_FUNC) &_gpuR_cpp_gpuMatrix_solve, 7},
+    {"_gpuR_cpp_gpuSparseMatrix_double", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_double, 4},
+    {"_gpuR_cpp_gpuSparseMatrix_float", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_float, 4},
+    {"_gpuR_cpp_gpuSparseMatrix_int", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_int, 4},
+    {"_gpuR_cpp_gpuSparseMatrix_fcomplex", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_fcomplex, 4},
+    {"_gpuR_cpp_gpuSparseMatrix_dcomplex", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_dcomplex, 4},
+    {"_gpuR_cpp_gpuSparseMatrix_dims", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_dims, 1},
+    {"_gpuR_cpp_gpuSparseMatrix_nrow", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_nrow, 1},
+    {"_gpuR_cpp_gpuSparseMatrix_ncol", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_ncol, 1},
+    {"_gpuR_cpp_gpuSparseMatrix_nnz", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_nnz, 1},
+    {"_gpuR_cpp_gpuSparseMatrix_to_matrix", (DL_FUNC) &_gpuR_cpp_gpuSparseMatrix_to_matrix, 1},
+    {"_gpuR_cpp_gpuSparseMat_mult", (DL_FUNC) &_gpuR_cpp_gpuSparseMat_mult, 2},
+    {"_gpuR_cpp_gpuSparseGpuDenseMat_mult", (DL_FUNC) &_gpuR_cpp_gpuSparseGpuDenseMat_mult, 2},
+    {"_gpuR_cpp_gpuDenseGpuSparseMat_mult", (DL_FUNC) &_gpuR_cpp_gpuDenseGpuSparseMat_mult, 2},
+    {"_gpuR_cpp_gpuSparseMat_transpose", (DL_FUNC) &_gpuR_cpp_gpuSparseMat_transpose, 1},
+    {"_gpuR_cpp_gpuSparseMat_norm_frobenius", (DL_FUNC) &_gpuR_cpp_gpuSparseMat_norm_frobenius, 1},
     {"_gpuR_synchronize", (DL_FUNC) &_gpuR_synchronize, 0},
     {"_gpuR_truncIntgpuMat", (DL_FUNC) &_gpuR_truncIntgpuMat, 3},
     {"_gpuR_truncFloatgpuMat", (DL_FUNC) &_gpuR_truncFloatgpuMat, 3},

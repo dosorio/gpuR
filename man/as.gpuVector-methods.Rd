@@ -25,6 +25,4 @@ A gpuVector object
 Construct a gpuVector of a class that inherits
 from \code{gpuVector}
 }
-\author{
-Charles Determan Jr.
-}
+

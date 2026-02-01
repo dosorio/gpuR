@@ -93,6 +93,4 @@ A gpuR object
 \description{
 Methods for the base Arith methods \link[methods]{S4groupGeneric}
 }
-\author{
-Charles Determan Jr.
-}
+

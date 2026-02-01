@@ -13,17 +13,20 @@
 \usage{
 vclVector(data, length, type = NULL, ...)
 
-\S4method{vclVector}{vector,missing}(data, length, type = NULL,
-  ctx_id = NULL)
+\S4method{vclVector}{vector,missing}(data, length, type = NULL, ctx_id = NULL)
 
-\S4method{vclVector}{missing,ANY}(data, length, type = NULL,
-  ctx_id = NULL)
+\S4method{vclVector}{missing,ANY}(data, length, type = NULL, ctx_id = NULL)
 
-\S4method{vclVector}{numeric,numericOrInt}(data, length, type = NULL,
-  ctx_id = NULL)
+\S4method{vclVector}{numeric,numericOrInt}(data, length, type = NULL, ctx_id = NULL)
 
-\S4method{vclVector}{vclMatrix,missing}(data, length = NULL,
-  type = NULL, ctx_id = NULL, col = NULL, row = NULL)
+\S4method{vclVector}{vclMatrix,missing}(
+  data,
+  length = NULL,
+  type = NULL,
+  ctx_id = NULL,
+  col = NULL,
+  row = NULL
+)
 }
 \arguments{
 \item{data}{An object that is or can be converted to a 
@@ -50,6 +53,4 @@ Construct a vclVector of a class that inherits
 from \code{vclVector}.  This class points to memory directly on
 the GPU to avoid the cost of data transfer between host and device.
 }
-\author{
-Charles Determan Jr.
-}
+

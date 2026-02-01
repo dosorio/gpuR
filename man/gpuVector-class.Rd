@@ -4,6 +4,9 @@
 \name{gpuVector-class}
 \alias{gpuVector-class}
 \title{gpuVector Class}
+\value{
+An object of class 'gpuVector' with the specified slots.
+}
 \description{
 This is the 'mother' class for all
 gpuVector objects.  All other gpuVector classes
@@ -27,9 +30,3 @@ to the particular data type contained.  These include
  }
 }
 
-\seealso{
-\code{\link{igpuVector-class}}
-}
-\author{
-Charles Determan Jr.
-}

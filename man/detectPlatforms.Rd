@@ -12,6 +12,4 @@ An integer value representing the number of platforms available.
 \description{
 Find out how many OpenCL enabled platforms are available.
 }
-\seealso{
-\link{detectGPUs}
-}
+

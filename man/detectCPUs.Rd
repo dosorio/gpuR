@@ -16,6 +16,4 @@ An integer representing the number of available CPUs
 \description{
 Find out how many CPUs available
 }
-\seealso{
-\link{detectPlatforms} \link{detectGPUs}
-}
+

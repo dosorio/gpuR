@@ -22,19 +22,4 @@ i.e. the matrix \emph{R} such that \emph{R'R} = x.
 Compute the Choleski factorization of a real symmetric 
 positive-definite square matrix.
 }
-\note{
-This an S3 generic of \link[base]{chol}.  The default continues
-to point to the default base function.
 
-No pivoting is used.
-
-The argument \code{upper} is additionally accepted representing a boolean 
-which will indicate if the upper or lower (\code{FALSE}) triangle
-should be solved.
-}
-\seealso{
-\link[base]{chol}
-}
-\author{
-Charles Determan Jr.
-}

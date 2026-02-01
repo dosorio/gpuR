@@ -22,7 +22,15 @@
 \item{x}{A gpuR object}
 }
 \value{
-A gpuR object
+A gpuVector object resulting from the 
+element-wise mathematical operation performed on 
+the input \code{gpuVector} object \code{x}.
+
+A \code{vclMatrix} object.
+
+A vclVector object.
+
+A gpuMatrix object.
 }
 \description{
 Methods for the base Math methods \link[methods]{S4groupGeneric}
@@ -34,6 +42,4 @@ Currently implemented methods include:
  "log10", "exp", "abs", "sqrt", "sign"}
  }
 }
-\author{
-Charles Determan Jr.
-}
+

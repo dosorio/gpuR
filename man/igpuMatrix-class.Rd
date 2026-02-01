@@ -4,6 +4,9 @@
 \name{igpuMatrix-class}
 \alias{igpuMatrix-class}
 \title{igpuMatrix Class}
+\value{
+If the gpuMatrix object is of type 'integer', returns TRUE, if not, returns an error message.
+}
 \description{
 An integer type matrix in the S4 \code{gpuMatrix}
 representation.
@@ -15,11 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{gpuMatrix-class}}, 
-\code{\link{igpuMatrix-class}},
-\code{\link{dgpuMatrix-class}}
-}
-\author{
-Charles Determan Jr.
-}

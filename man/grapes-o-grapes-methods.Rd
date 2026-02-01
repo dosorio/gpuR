@@ -15,9 +15,10 @@
 
 \item{Y}{A gpuR object}
 }
+\value{
+The outer product of the two \code{gpuVector} objects \code{X} and \code{Y}.
+}
 \description{
 The outer product of two gpuR vector objects
 }
-\author{
-Charles Determan Jr.
-}
+

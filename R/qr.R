@@ -105,12 +105,12 @@ qr.vclMatrix <-
 #' @description Returns the components of the QR decomposition.
 #' @param qr \code{gpuQR} object
 #' @param complete not currently used
-#' @return \code{qr.Q} returns all of \code{Q}
+#' @return \code{qr.Q} returns all of \code{Q},
 #' \code{qr.R} returns all of \code{R}
 #' @author Charles Determan Jr.
 #' @rdname qr.R-methods
 #' @seealso \link[base]{qr.R}, \link[base]{qr.Q}
-#' @export
+#' @keywords internal
 setMethod("qr.R", signature(qr = "gpuQR"),
           function(qr, complete = FALSE){
               
@@ -153,47 +153,4 @@ setMethod("qr.R", signature(qr = "gpuQR"),
           }) 
 
 
-#' @rdname qr.R-methods
-#' @export
-setMethod("qr.Q", signature(qr = "gpuQR"),
-          function(qr, complete = FALSE){
-              
-              type <- typeof(qr$qr)
-              
-              isVCL <- inherits(qr$qr, "vclMatrix")
-              
-              if(isVCL){
-                  Q <- vclMatrix(nrow = nrow(qr$qr), ncol = ncol(qr$qr), type = type)
-                  R <- vclMatrix(nrow = nrow(qr$qr), ncol = nrow(qr$qr), type = type)    
-              }else{
-                  Q <- gpuMatrix(nrow = nrow(qr$qr), ncol = ncol(qr$qr), type = type)
-                  R <- vclMatrix(nrow = nrow(qr$qr), ncol = nrow(qr$qr), type = type)
-              }
-              
-              # print(isVCL)
-              # stop("stopping")
-              
-              switch(type,
-                     "float" = cpp_recover_qr(qr$qr@address,
-                                              isVCL,
-                                              Q@address,
-                                              inherits(Q, "vclMatrix"),
-                                              R@address,
-                                              inherits(R, "vclMatrix"),
-                                              qr$betas,
-                                              6L,
-                                              qr$qr@.context_index - 1),
-                     "double" = cpp_recover_qr(qr$qr@address,
-                                               isVCL,
-                                               Q@address,
-                                               inherits(Q, "vclMatrix"),
-                                               R@address,
-                                               inherits(R, "vclMatrix"),
-                                               qr$betas,
-                                               8L,
-                                               qr$qr@.context_index - 1),
-                     stop("type not currently supported")
-              )
-              
-              return(Q)
-          }) 
+

@@ -4,6 +4,9 @@
 \name{dgpuVector-class}
 \alias{dgpuVector-class}
 \title{dgpuVector Class}
+\value{
+If the gpuVector object is of type 'double', returns TRUE, if not, returns an error message.
+}
 \description{
 An double vector in the S4 \code{gpuVector}
 representation.
@@ -15,9 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{gpuVector-class}}
-}
-\author{
-Charles Determan Jr.
-}

@@ -4,6 +4,9 @@
 \name{zvclMatrix-class}
 \alias{zvclMatrix-class}
 \title{zvclMatrix Class}
+\value{
+If the vclMatrix object is of type 'complex double', returns TRUE, if not, returns an error message.
+}
 \description{
 An complex double type matrix in the S4 \code{vclMatrix}
 representation.
@@ -15,11 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{vclMatrix-class}}, 
-\code{\link{ivclMatrix-class}},
-\code{\link{fvclMatrix-class}}
-}
-\author{
-Charles Determan Jr.
-}

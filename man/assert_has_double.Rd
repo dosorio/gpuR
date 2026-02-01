@@ -4,8 +4,11 @@
 \alias{assert_has_double}
 \title{Does device have 'double' support?}
 \usage{
-assert_has_double(device_idx, context_idx,
-  severity = getOption("assertive.severity", "stop"))
+assert_has_double(
+  device_idx,
+  context_idx,
+  severity = getOption("assertive.severity", "stop")
+)
 }
 \arguments{
 \item{device_idx}{An integer indicating which device to query}
@@ -22,9 +25,4 @@ double precision
 Function to query if device (identified by index) supports
 double precision
 }
-\seealso{
-\link{deviceHasDouble}
-}
-\author{
-Charles Determan Jr.
-}
+

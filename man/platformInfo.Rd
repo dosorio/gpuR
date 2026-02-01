@@ -21,6 +21,4 @@ platformInfo(platform_idx = 1L)
 \description{
 Get basic information about the OpenCL platform
 }
-\author{
-Charles Determan Jr.
-}
+

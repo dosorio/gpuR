@@ -4,6 +4,9 @@
 \name{cgpuMatrix-class}
 \alias{cgpuMatrix-class}
 \title{cgpuMatrix Class}
+\value{
+If the gpuMatrix object is of type 'complex float', returns TRUE, if not, returns an error message.
+}
 \description{
 An complex float type matrix in the S4 \code{gpuMatrix}
 representation.
@@ -15,11 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{gpuMatrix-class}}, 
-\code{\link{igpuMatrix-class}},
-\code{\link{dgpuMatrix-class}}
-}
-\author{
-Charles Determan Jr.
-}

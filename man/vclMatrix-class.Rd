@@ -4,6 +4,9 @@
 \name{vclMatrix-class}
 \alias{vclMatrix-class}
 \title{vclMatrix Class}
+\value{
+An object of class 'vclMatrix' with the specified slots.
+}
 \description{
 This is the 'mother' class for all
 vclMatrix objects.  These objects are pointers
@@ -21,14 +24,7 @@ to the particular data type contained.  These include
 \code{dvclMatrix} corresponding to integer, float, and
 double data types respectively.
 }
-\note{
-R does not contain a native float type.  As such,
-the matrix data within a \code{\link{fvclMatrix-class}} 
-will be represented as double but downcast when any 
-vclMatrix methods are used.
 
-May also remove the type slot
-}
 \section{Slots}{
 
  Common to all vclMatrix objects in the package
@@ -42,11 +38,3 @@ May also remove the type slot
  }
 }
 
-\seealso{
-\code{\link{ivclMatrix-class}}, 
-\code{\link{fvclMatrix-class}},
-\code{\link{dvclMatrix-class}}
-}
-\author{
-Charles Determan Jr.
-}

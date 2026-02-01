@@ -43,6 +43,4 @@ matrices using a GPU.  This is equivalent to t(x) %*% y (crossprod)
 or x %*% t(t) (tcrossprod) but faster as no data transfer between
 device and host is required.
 }
-\author{
-Charles Determan Jr.
-}
+

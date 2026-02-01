@@ -4,6 +4,9 @@
 \name{ivclVector-class}
 \alias{ivclVector-class}
 \title{ivclVector Class}
+\value{
+If the vclVector object is of type 'integer', returns TRUE, if not, returns an error message.
+}
 \description{
 An integer vector in the S4 \code{vclVector}
 representation.
@@ -15,9 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{vclVector-class}}
-}
-\author{
-Charles Determan Jr.
-}

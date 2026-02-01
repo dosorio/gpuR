@@ -21,6 +21,4 @@ A gpuMatrix object
 Construct a gpuMatrix of a class that inherits
 from \code{gpuMatrix}
 }
-\author{
-Charles Determan Jr.
-}
+

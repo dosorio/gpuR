@@ -6,7 +6,7 @@ cpp_vclMatrix_custom_chol <- function(ptrB, BisVCL, upper, sourceCode, max_local
 }
 
 initContexts <- function() {
-    invisible(.Call(`_gpuR_initContexts`))
+    .Call(`_gpuR_initContexts`)
 }
 
 #' @title Available OpenCL Contexts
@@ -248,6 +248,66 @@ cpp_gpuMatrix_det <- function(ptrA, AisVCL, type_flag, ctx_id) {
 
 cpp_gpuMatrix_solve <- function(ptrA, ptrB, AisVCL, BisVCL, type_flag, ctx_id, BisI = TRUE) {
     invisible(.Call(`_gpuR_cpp_gpuMatrix_solve`, ptrA, ptrB, AisVCL, BisVCL, type_flag, ctx_id, BisI))
+}
+
+cpp_gpuSparseMatrix_double <- function(x, ctx_id, platform_id, device_id) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_double`, x, ctx_id, platform_id, device_id)
+}
+
+cpp_gpuSparseMatrix_float <- function(x, ctx_id, platform_id, device_id) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_float`, x, ctx_id, platform_id, device_id)
+}
+
+cpp_gpuSparseMatrix_int <- function(x, ctx_id, platform_id, device_id) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_int`, x, ctx_id, platform_id, device_id)
+}
+
+cpp_gpuSparseMatrix_fcomplex <- function(x, ctx_id, platform_id, device_id) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_fcomplex`, x, ctx_id, platform_id, device_id)
+}
+
+cpp_gpuSparseMatrix_dcomplex <- function(x, ctx_id, platform_id, device_id) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_dcomplex`, x, ctx_id, platform_id, device_id)
+}
+
+cpp_gpuSparseMatrix_dims <- function(x) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_dims`, x)
+}
+
+cpp_gpuSparseMatrix_nrow <- function(x) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_nrow`, x)
+}
+
+cpp_gpuSparseMatrix_ncol <- function(x) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_ncol`, x)
+}
+
+cpp_gpuSparseMatrix_nnz <- function(x) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_nnz`, x)
+}
+
+cpp_gpuSparseMatrix_to_matrix <- function(x) {
+    .Call(`_gpuR_cpp_gpuSparseMatrix_to_matrix`, x)
+}
+
+cpp_gpuSparseMat_mult <- function(ptrA, ptrB) {
+    .Call(`_gpuR_cpp_gpuSparseMat_mult`, ptrA, ptrB)
+}
+
+cpp_gpuSparseGpuDenseMat_mult <- function(ptrA, ptrB) {
+    .Call(`_gpuR_cpp_gpuSparseGpuDenseMat_mult`, ptrA, ptrB)
+}
+
+cpp_gpuDenseGpuSparseMat_mult <- function(ptrA, ptrB) {
+    .Call(`_gpuR_cpp_gpuDenseGpuSparseMat_mult`, ptrA, ptrB)
+}
+
+cpp_gpuSparseMat_transpose <- function(ptrA) {
+    .Call(`_gpuR_cpp_gpuSparseMat_transpose`, ptrA)
+}
+
+cpp_gpuSparseMat_norm_frobenius <- function(ptrA) {
+    .Call(`_gpuR_cpp_gpuSparseMat_norm_frobenius`, ptrA)
 }
 
 #' @title Synchronize Device Execution

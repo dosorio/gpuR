@@ -69,6 +69,4 @@ No return, result applied in-place
 Applies the provided function in-place on the 
 first object passed
 }
-\author{
-Charles Determan Jr.
-}
+

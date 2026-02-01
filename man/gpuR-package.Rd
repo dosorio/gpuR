@@ -22,21 +22,7 @@ functions to apply on R objects.
 \tabular{ll}{ Package: \tab gpuR\cr Type: \tab Package\cr 
 Version: \tab 1.0.0\cr Date: \tab 2015-03-31\cr License: \tab GPL-3\cr
 Copyright: \tab (c) 2015 Charles E. Determan Jr.\cr URL: \tab 
-\url{http://www.github.com/cdeterman/gpuR}\cr LazyLoad: \tab yes\cr
+\url{https://github.com/cdeterman/gpuR}\cr LazyLoad: \tab yes\cr
 }
 }
-\note{
-There are other packages that also provide wrappers for OpenCL 
-programming including \pkg{OpenCL} by Simon Urbanek and \bold{ROpenCL} at 
-Open Analytics by Willem Ligtenberg.  Both of these packages provide
-the R user an interface to directly call OpenCL functions.  This package, 
-however, hides these functions so the user does not require any knowledge
-of OpenCL to begin using their GPU.  The idea behind this package is to
-provide a means to begin using existing algorithms without the need
-to write extensive amounts of C/C++/OpenCL code.
-}
-\author{
-Charles Determan \email{cdetermanjr@gmail.com}
 
-Maintainer: Charles Determan \email{cdetermanjr@gmail.com}
-}

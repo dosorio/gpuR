@@ -50,9 +50,4 @@ piece (bytes)}
 \description{
 Get basic information about selected device (e.g. GPU)
 }
-\seealso{
-\link{detectPlatforms} \link{detectGPUs} \link{detectCPUs} \link{cpuInfo}
-}
-\author{
-Charles Determan Jr.
-}
+

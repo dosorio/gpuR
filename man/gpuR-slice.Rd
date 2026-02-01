@@ -22,7 +22,7 @@ slice(object, start, end)
 \item{end}{An integer indicating the end of slice}
 }
 \value{
-A \code{gpuVectorSlice} or \code{vclVectorSlice} object
+A \code{gpuVectorSlice} or \code{vclVectorSlice} object.
 }
 \description{
 This doesn't create a copy, it provides a child class that
@@ -37,6 +37,4 @@ object without a copy.
 NOTE - this means that altering values in a vector slice object will alter
 values in the source vector.
 }
-\author{
-Charles Determan Jr.
-}
+

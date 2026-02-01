@@ -4,8 +4,10 @@
 \alias{deviceHasDouble}
 \title{Check GPU double precision support}
 \usage{
-deviceHasDouble(gpu_idx = currentDevice()$device_index,
-  context_idx = currentContext())
+deviceHasDouble(
+  gpu_idx = currentDevice()$device_index,
+  context_idx = currentContext()
+)
 }
 \arguments{
 \item{gpu_idx}{An integer value indicating which gpu to query.}
@@ -19,6 +21,4 @@ A boolean designating whether the device supports double precision
 This function checks the GPU device extensions for the
 variable cl_khr_fp64 which means the device supports double precision.
 }
-\seealso{
-\link{gpuInfo}
-}
+

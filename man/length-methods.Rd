@@ -23,11 +23,15 @@
 \item{x}{A gpuMatrix/vclMatrix object}
 }
 \value{
+Length of the gpuVector object \code{x}.
+
+The total number of elements in the vclMatrix object `x`.
+
+The length of the vclVector based on its data type.
+
 A numeric value
 }
 \description{
 Retrieve number of elements in object
 }
-\author{
-Charles Determan Jr.
-}
+

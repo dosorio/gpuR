@@ -4,6 +4,9 @@
 \name{fvclMatrix-class}
 \alias{fvclMatrix-class}
 \title{fvclMatrix Class}
+\value{
+If the vclMatrix object is of type 'float', returns TRUE, if not, returns an error message.
+}
 \description{
 An integer type matrix in the S4 \code{vclMatrix}
 representation.
@@ -15,11 +18,3 @@ representation.
  }
 }
 
-\seealso{
-\code{\link{vclMatrix-class}}, 
-\code{\link{ivclMatrix-class}},
-\code{\link{dvclMatrix-class}}
-}
-\author{
-Charles Determan Jr.
-}

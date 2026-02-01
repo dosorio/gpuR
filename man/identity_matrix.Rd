@@ -19,11 +19,4 @@ A \code{vclMatrix} object
 Creates an identity matrix directly on the current device
 (e.g. GPU)
 }
-\note{
-This function was only created for \code{vclMatrix} objects as
-the copy from CPU to \code{gpuMatrix} is trivial using the base
-\link[base]{diag} function.
-}
-\author{
-Charles Determan Jr.
-}
+

@@ -16,6 +16,4 @@ An integer representing the number of available GPUs
 \description{
 Find out how many GPUs available
 }
-\seealso{
-\link{detectPlatforms}
-}
+
